@@ -27,3 +27,15 @@ UF_CHOICES = [
     ('SE', 'Sergipe'),
     ('TO', 'Tocantins'),
 ]
+
+
+UN_MEDIDA_CHOICES = [
+    ('UN','Unidade' ),
+    ('CAIXA','Caixa'),
+]
+
+STATUS_PRODUCAO = [
+    ('producao', 'Em Produção'),
+    ('paralizado','Paralizado'),
+    ('finalizado', 'Finalizado'),
+]
