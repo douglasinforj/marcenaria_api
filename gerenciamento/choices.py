@@ -39,3 +39,21 @@ STATUS_PRODUCAO = [
     ('paralizado','Paralizado'),
     ('finalizado', 'Finalizado'),
 ]
+
+CARGOS = [
+    ('supervisor', 'Supervisor'),
+    ('tecnico', 'Tecnico'),
+    ('marceneiro','Marceneiro'),
+    ('administrativo','Administrativo'),
+    ('carpinteiro','Carpinteiro'),
+    ('eletricista','Eletricista'),
+    ('motorista', 'Motorista'),
+]
+
+SETOR = [
+    ('producao','Produção'),
+    ('administracao','Administração'),
+    ('almoxarifado','Almoxarifado'),
+    ('compras','Compras'),
+    ('comercial','Comercial'),
+]
