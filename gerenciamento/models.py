@@ -1,5 +1,5 @@
 from django.db import models
-from .choices import UF_CHOICES, UN_MEDIDA_CHOICES
+from .choices import UF_CHOICES, UN_MEDIDA_CHOICES, STATUS_PRODUCAO
 
 
 class Fornecedor(models.Model):
@@ -44,3 +44,17 @@ class Estoque(models.Model):
     documentos_upload = models.FileField(upload_to='documentos/')
     fotos_produtos = models.ImageField(upload_to='fotos_produtos/')
     descricao = models.TextField()
+
+class Pedido(models.Model):
+    produto = models.ForeignKey(Produto, on_delete=models.CASCADE)
+    material_usado = models.ManyToManyField(Estoque, through='PedidoMaterial')
+    cliente = models.ForeignKey(Cliente, on_delete=models)
+    status = models.CharField(max_length=20 ,choices=STATUS_PRODUCAO, default='')
+    criado_em = models.DateTimeField(auto_now_add =True)
+    atualizado_em = models.DateTimeField(auto_now =True)
+
+class PedidoMaterial(models.Model):
+    pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE)
+    estoque = models.ForeignKey(Estoque, on_delete=models.CASCADE)
+    quantidade_utilizada = models.DecimalField(max_digits=10, decimal_places=2)
+    preco = models.DecimalField(max_digits=10, decimal_places=2)
