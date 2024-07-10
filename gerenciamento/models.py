@@ -25,3 +25,7 @@ class Cliente(models.Model):
     email = models.EmailField()
     vendedor = models.CharField(max_length=255)
 
+class Produto(models.Model):
+    nome_produto = models.CharField(max_length=255)
+    codigo_produto = models.CharField(max_length=100)
+    descricao_produto = models.TextField()
